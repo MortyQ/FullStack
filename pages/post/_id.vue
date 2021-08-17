@@ -58,7 +58,10 @@
     </main>
     <footer>
 
-        <app-comment-form/>
+        <app-comment-form
+          v-if='canAddComment'
+        @created='createCommentHandler'
+        />
       <div class="comments" v-if="true">
         <app-comment v-for="comment in 4" :key="comment" :comment="comment" />
       </div>
@@ -75,6 +78,16 @@ export default {
   validate({ params }) {
     return !!params.id
   },
+  data(){
+    return {
+      canAddComment: true,
+    }
+  },
+  methods:{
+    createCommentHandler(){
+      this.canAddComment = false
+    }
+  }
 }
 </script>
 

@@ -1,6 +1,8 @@
 <template>
     <nav>
       <h1>Navigation</h1>
+
+      <nuxt-link to='/admin'>ADMIN PANEL</nuxt-link>
     </nav>
 </template>
 
